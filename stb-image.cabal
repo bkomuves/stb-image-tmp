@@ -1,5 +1,5 @@
 Name:                stb-image
-Version:             0.2.1
+Version:             0.3.0
 Synopsis:            A wrapper around Sean Barrett's JPEG/PNG decoder
 Description:         Partial implementation of JPEG, PNG, TGA, BMP, PSD decoders,
                      with a really simple API.

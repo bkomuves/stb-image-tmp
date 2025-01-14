@@ -1,7 +1,7 @@
 
 --------------------------------------------------------------------------------
 -- Module      : Codec.Image.STB
--- Version     : 0.2.1
+-- Version     : 0.3
 -- License     : Public Domain
 -- Author      : Balazs Komuves
 -- Maintainer  : bkomuves (plus) hackage (at) gmail (dot) com
@@ -11,9 +11,9 @@
 --------------------------------------------------------------------------------
 
 -- | A wrapper around @stb_image@, Sean Barrett's public domain JPEG\/PNG decoder.
--- The original can be found at <http://nothings.org/stb_image.c>.
--- The version of @stb_image@ used here is @stbi-1.33@. 
--- The current list of (partially) supported formats is JPEG, PNG, TGA, BMP, PSD.
+-- The original can be found at <https://github.com/nothings/stb/blob/master/stb_image.h>.
+-- The version of @stb_image@ used here is @stb_image v2.30@. 
+-- The current list of (partially) supported formats is JPEG, PNG, TGA, BMP, PSD, GIF, HDR, PIC, PNM.
 --
 -- Please note that the library is not (fully) thread-safe! Furthermore,
 -- the library does not give any guarantee in case of invalid input;
