@@ -7,7 +7,7 @@
 -- Maintainer  : bkomuves (plus) hackage (at) gmail (dot) com
 -- Stability   : experimental
 -- Portability : portable(?), requires FFI and CPP
--- Tested with : GHC 6.12.3
+-- Tested with : GHC 9.6.2
 --------------------------------------------------------------------------------
 
 -- | A wrapper around @stb_image@, Sean Barrett's public domain JPEG\/PNG decoder.
@@ -18,12 +18,13 @@
 -- Please note that the library is not (fully) thread-safe! Furthermore,
 -- the library does not give any guarantee in case of invalid input;
 -- in particular it is a security risk to load untrusted image files.
-
+--
+-- Note: the 'Bitmap' type comes from <https://hackage.haskell.org/package/bitmap>.
+--
 {-# LANGUAGE ForeignFunctionInterface, CPP #-} 
 {-# CFILES cbits/stb_image.c #-}  -- for Hugs (?)
 module Codec.Image.STB
-  ( Bitmap
-  , Image
+  ( Image
   , decodeImage
   , decodeImage'
   , loadImage
@@ -36,7 +37,7 @@ import Data.Bitmap.Pure  -- Data.Bitmap.IO
 
 import Control.Monad (liftM)
 import Control.Exception
-import Data.ByteString (ByteString)
+import Data.ByteString ()
 import qualified Data.ByteString as B
 import Foreign
 import Foreign.C

@@ -7,11 +7,11 @@ License:             PublicDomain
 License-file:        LICENSE
 Author:              Balazs Komuves
 Maintainer:          bkomuves (plus) hackage (at) gmail (dot) com
-Homepage:            http://code.haskell.org/~bkomuves/
+Homepage:            https://github.com/bkomuves/stb-image-tmp
 Stability:           Experimental
 Category:            Codec, Graphics
-Tested-With:         GHC == 6.12.3
-Cabal-Version:       >= 1.2
+Tested-With:         GHC == 9.6.2
+Cabal-Version:       >= 1.8
 Build-Type:          Simple
 
 Extra-Source-Files:  example/viewer.hs,
