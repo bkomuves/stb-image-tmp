@@ -29,6 +29,7 @@ module Codec.Image.STB
   , decodeImage'
   , loadImage
   , loadImage'
+  , setFlipVerticallyOnLoad
   ) where
 
 --------------------------------------------------------------------------------
@@ -64,6 +65,9 @@ foreign import ccall safe "stb_image.h &stbi_image_free"
 
 foreign import ccall safe "stb_image.h stbi_failure_reason"
   stbi_failure_reason :: IO (Ptr CChar)
+
+foreign import ccall safe "stb_image.h stbi_set_flip_vertically_on_load"
+  stbi_set_flip_vertically_on_load :: CInt -> IO ()
 
 --------------------------------------------------------------------------------
 
@@ -134,7 +138,11 @@ loadImage' path ncomps = handle ioHandler $ do
   h <- openBinaryFile path ReadMode 
   b <- B.hGetContents h
   hClose h
-  decodeImage' ncomps b     
- 
+  decodeImage' ncomps b
+
+-- | Flip loaded images vertically so that the first pixel in the output array
+-- is the bottom left.
+setFlipVerticallyOnLoad :: Bool -> IO ()
+setFlipVerticallyOnLoad = stbi_set_flip_vertically_on_load . fromIntegral . fromEnum
 --------------------------------------------------------------------------------
   
